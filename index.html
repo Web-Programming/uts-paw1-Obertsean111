@@ -37,8 +37,8 @@
         <div class="mb-3">
             <label for="tipe" class="form-tabel">Tipe:</label>
             <select id="tipe" class="form-select">
-                    <option value="pemasukan">Pemasukan</option>
-                    <option value="pengeluaran">Pengeluaran</option>
+                    <option value="pemasukan">pemasukan</option>
+                    <option value="pengeluaran">pengeluaran</option>
                 </select>
         </div>
         <div class="mb-3">
@@ -92,7 +92,7 @@
             let pemasukan = 0;
             let pengeluaran = 0;
 
-            if (tipe === "Pemasukan") {
+            if (tipe === "pemasukan") {
                 pemasukan = jumlah;
                 totalPemasukan += pemasukan;
             } else {
@@ -148,6 +148,9 @@
                 alert("Tidak ada transaksi untuk dihapus.");
             }
         }
+        document.querySelector(".btn-success").onclick = tambahTransaksi;
+        document.querySelector(".btn-danger").onclick = hapusSemuaTransaksi;
+        document.querySelector(".btn-warning").onclick = hapusBarisTerakhir;
     </script>
 
 </body>
