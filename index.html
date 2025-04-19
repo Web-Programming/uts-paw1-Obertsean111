@@ -128,6 +128,14 @@
                 tbody.innerHTML += row;
             });
         }
+
+        function hapusSemuaTransaksi() {
+            totalPemasukan = 0;
+            totalPengeluaran = 0;
+            dataKeuangan.length = 0;
+            renderDataKeuangan();
+            updateTotals();
+        }
     </script>
 
 </body>
