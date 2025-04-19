@@ -136,6 +136,18 @@
             renderDataKeuangan();
             updateTotals();
         }
+
+        function hapusBarisTerakhir() {
+            if (dataKeuangan.length > 0) {
+                const lastTransaction = dataKeuangan.pop();
+                totalPemasukan -= lastTransaction.pemasukan;
+                totalPengeluaran -= lastTransaction.pengeluaran;
+                renderDataKeuangan();
+                updateTotals();
+            } else {
+                alert("Tidak ada transaksi untuk dihapus.");
+            }
+        }
     </script>
 
 </body>
