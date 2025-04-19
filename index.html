@@ -24,6 +24,32 @@
         </div>
     </div>
 
+    <h4 class="text-center text-bold">TAMBAH TRANSAKSI</h4>
+    <div class="card p-4">
+        <div class="mb-3">
+            <label for="tipe" class="form-tabel">Tanggal:</label>
+            <input type="date" id="tanggal" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="keterangan" class="form-tabel">Keterangan:</label>
+            <input type="text" id="keterangan" class="form-control" placeholder="Masukkan keterangan">
+        </div>
+        <div class="mb-3">
+            <label for="tipe" class="form-tabel">Tipe:</label>
+            <select id="tipe" class="form-select">
+                    <option value="pemasukan">Pemasukan</option>
+                    <option value="pengeluaran">Pengeluaran</option>
+                </select>
+        </div>
+        <div class="mb-3">
+            <label for="jumlah" class="form-tabel">Jumlah:</label>
+            <input type="number" id="jumlah" class="form-control" placeholder="Masukkan jumlah uang">
+        </div>
+        <div class="row gap-2">
+            <button class="btn btn-success col" onclick="">Tambah Transaksi</button>
+            <button class="btn btn-danger col" onclick="">Hapus Semua Transaksi</button>
+            <button class="btn btn-warning col" onclick="">Hapus Transaksi Terakhir</button>
+        </div>
 </body>
 
 </html>
