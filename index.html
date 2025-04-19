@@ -66,6 +66,53 @@
         </thead>
         <tbody id="dataKeuangan"></tbody>
     </table>
+    <script>
+        let totalPemasukan = 0;
+        let totalPengeluaran = 0;
+        const dataKeuangan = [];
+
+
+        function updateTotals() {
+            document.getElementById("totalPemasukan").innerText = totalPemasukan;
+            document.getElementById("totalPengeluaran").innerText = totalPengeluaran;
+            document.getElementById("saldoAkhir").innerText = totalPemasukan - totalPengeluaran;
+        }
+
+        function tambahTransaksi() {
+            const tanggal = document.getElementById("tanggal").value;
+            const keterangan = document.getElementById("keterangan").value;
+            const tipe = document.getElementById("tipe").value;
+            const jumlah = parseInt(document.getElementById("jumlah").value);
+
+            if (!tanggal || !keterangan || isNaN(jumlah) || jumlah <= 0) {
+                alert("Silakan lengkapi semua data transaksi dengan benar.");
+                return;
+            }
+
+            let pemasukan = 0;
+            let pengeluaran = 0;
+
+            if (tipe === "Pemasukan") {
+                pemasukan = jumlah;
+                totalPemasukan += pemasukan;
+            } else {
+                pengeluaran = jumlah;
+                totalPengeluaran += pengeluaran;
+            }
+
+            const saldo = totalPemasukan - totalPengeluaran;
+            dataKeuangan.push({
+                tanggal,
+                keterangan,
+                pemasukan,
+                pengeluaran,
+                saldo
+            });
+
+            renderDataKeuangan();
+            updateTotals();
+        }
+    </script>
 
 </body>
 
