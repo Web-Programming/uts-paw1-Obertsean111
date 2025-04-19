@@ -112,6 +112,22 @@
             renderDataKeuangan();
             updateTotals();
         }
+
+        function renderDataKeuangan() {
+            const tbody = document.getElementById("dataKeuangan");
+            tbody.innerHTML = "";
+
+            dataKeuangan.forEach((data) => {
+                const row = `<tr>
+            <td>${data.tanggal}</td>
+            <td>${data.keterangan}</td>
+            <td>${data.pemasukan}</td>
+            <td>${data.pengeluaran}</td>
+            <td>${data.saldo}</td>
+        </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
     </script>
 
 </body>
